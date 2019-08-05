@@ -96,11 +96,11 @@ def cut(x,y,w,h):
     print u"图片切割成功".encode('gbk')
 
 if __name__=="__main__":
-    #设定切割的宽和高 最大的宽和高
+    #设定切割的左上角坐标和右下角坐标
     #横向切割
     #res = cutHorizontal(14,20,560,40)
     #纵向切割
-	res = cutPortrait(337,144,337,438)
+	#res = cutPortrait(337,144,337,438)
     #res = cutPortrait(337,51,337,144)
-    print res
-    #cut(0,10,337,144)
+    #print res
+    cut(0,45,460,89)
