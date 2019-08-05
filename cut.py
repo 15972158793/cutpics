@@ -5,7 +5,7 @@
 import os
 from PIL import Image
 #图片的名字
-picName = "di2"
+picName = "di"
 #子文件名称
 picZName = "di_"
 #图片和脚本所在的目录
@@ -82,12 +82,25 @@ def cutPortrait(w,h,maxW,maxH):
     print u"图片切割成功，切割得到的子图片数为".encode('gbk')
     return n-1
 
+#单独切割一张图片
+def cut(x,y,w,h):
+    #图片的路径
+    name1 = baseDir + ".png"
+    #切割后的存储位置
+    name2 = baseDir + "\\" + picZName
+    im =Image.open(name1)
+    name3 = name2 + "0.png"
+    #print n,x1,y1,x2,y2
+    im2 = im.crop((x, y, w, h))
+    im2.save(name3)
+    print u"图片切割成功".encode('gbk')
 
 if __name__=="__main__":
     #设定切割的宽和高 最大的宽和高
     #横向切割
     #res = cutHorizontal(14,20,560,40)
-
     #纵向切割
-    res = cutPortrait(337,52,337,144)
+	res = cutPortrait(337,144,337,438)
+    #res = cutPortrait(337,51,337,144)
     print res
+    #cut(0,10,337,144)
